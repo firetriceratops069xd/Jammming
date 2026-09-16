@@ -7,8 +7,8 @@ function Tracklist ({ tracks }) {
             {tracks.map((track) => {
                 return (
                     <Track 
-                        key={track.title}
-                        title={track.title}
+                        key={track.id}
+                        name={track.name}
                         artist={track.artist}
                         album={track.album}
                     />

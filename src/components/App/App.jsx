@@ -5,32 +5,37 @@ import SearchBar from '../SearchBar/SearchBar';
 function App() {
   const searchResults = [
       {
-          title: "Bohemian Rhapsody",
+          name: "Bohemian Rhapsody",
           artist: "Queen",
-          album: "A Night at the Opera"
+          album: "A Night at the Opera",
+          id: 1
       },
       {
-          title: "Numb",
+          name: "Numb",
           artist: "Linkin Park",
-          album: "Meteora"
+          album: "Meteora",
+          id: 2
       },
       {
-          title: "Blinding Lights",
+          name: "Blinding Lights",
           artist: "The Weeknd",
-          album: "After Hours"
+          album: "After Hours",
+          id: 3
       }
   ];
 
   const playlistTracks = [
       {
-          title: "Bohemian Rhapsody",
+          name: "Bohemian Rhapsody",
           artist: "Queen",
-          album: "A Night at the Opera"
+          album: "A Night at the Opera",
+          id: 1
       },
       {
-          title: "Numb",
+          name: "Numb",
           artist: "Linkin Park",
-          album: "Meteora"
+          album: "Meteora",
+          id: 2
       }
   ];
 
