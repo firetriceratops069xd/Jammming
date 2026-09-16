@@ -1,0 +1,13 @@
+.playlist {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.playlistName {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.saveButton {
+    margin-top: 10px;
+}
