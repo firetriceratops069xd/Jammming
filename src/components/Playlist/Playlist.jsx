@@ -1,7 +1,7 @@
 import Tracklist from "../Tracklist/Tracklist";
 import styles from "./Playlist.module.css";
 
-function Playlist({ tracks }) {
+function Playlist({ name, tracks }) {
     function handleSave(event) {
         event.preventDefault();
         console.log("Playlist saved!")
@@ -9,7 +9,7 @@ function Playlist({ tracks }) {
 
     return (
         <form className={styles.playlist} onSubmit={handleSave}>
-            <h2>My Playlist</h2>
+            <h2>{name}</h2>
 
             <label htmlFor="playlist-name">Playlist name</label>
             <input className={styles.playlistName} id="playlist-name" type="text"/>
