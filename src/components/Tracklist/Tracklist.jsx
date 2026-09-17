@@ -1,16 +1,15 @@
 import Track from "../Track/Track";
 import styles from "./Tracklist.module.css";
 
-function Tracklist ({ tracks }) {
+function Tracklist ({ tracks, onAdd }) {
     return (
         <div className={styles.tracklist}>
             {tracks.map((track) => {
                 return (
                     <Track 
                         key={track.id}
-                        name={track.name}
-                        artist={track.artist}
-                        album={track.album}
+                        track={track}
+                        onAdd={onAdd}
                     />
                 )
             })}

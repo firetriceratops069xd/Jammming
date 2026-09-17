@@ -21,6 +21,16 @@ function App() {
     }
   ]);
 
+  function addTrack(track) {
+    const alreadyExists = playlistTracks.some(
+      (playlistTrack) => playlistTrack.id === track.id
+    )
+
+    if (!alreadyExists) {
+      setPlaylistTracks([...playlistTracks, track]);
+    }
+  }
+
   const searchResults = [
       {
           name: "Bohemian Rhapsody",
@@ -45,7 +55,10 @@ function App() {
   return (
     <div>
       <SearchBar />
-      <SearchResults tracks={searchResults} />
+      <SearchResults 
+        tracks={searchResults}
+        onAdd={addTrack}
+      />
       <Playlist 
         name={playlistName}
         tracks={playlistTracks} />

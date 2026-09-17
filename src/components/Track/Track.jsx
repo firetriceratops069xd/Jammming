@@ -1,16 +1,16 @@
 import styles from "./Track.module.css";
 
-function Track({ name, artist, album }) {
+function Track({ track, onAdd }) {
 
     function handleAddToPlaylist() {
-        console.log("Track added!");
+        onAdd(track);
     }
 
     return (
         <div className={styles.track}>   
-            <h3>{name}</h3>
-            <p>{artist}</p>
-            <p>{album}</p>
+            <h3>{track.name}</h3>
+            <p>{track.artist}</p>
+            <p>{track.album}</p>
             <button onClick={handleAddToPlaylist}>Add to Playlist</button>
         </div>
     );
