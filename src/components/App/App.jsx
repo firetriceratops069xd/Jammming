@@ -67,7 +67,8 @@ function App() {
       <Playlist 
         name={playlistName}
         tracks={playlistTracks}
-        onRemove={removeFromPlaylist}  
+        onRemove={removeFromPlaylist}
+        onChange={setPlaylistName}  
       />
     </div>
   );
