@@ -21,6 +21,11 @@ function App() {
     }
   ]);
 
+  function removeFromPlaylist(track) {
+    const updatedTracks = playlistTracks.filter(playlistTrack => playlistTrack.id !== track.id);
+    setPlaylistTracks(updatedTracks);
+  }
+
   function addTrack(track) {
     const alreadyExists = playlistTracks.some(
       (playlistTrack) => playlistTrack.id === track.id
@@ -61,7 +66,9 @@ function App() {
       />
       <Playlist 
         name={playlistName}
-        tracks={playlistTracks} />
+        tracks={playlistTracks}
+        onRemove={removeFromPlaylist}  
+      />
     </div>
   );
 }

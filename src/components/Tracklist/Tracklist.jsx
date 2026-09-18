@@ -1,7 +1,7 @@
 import Track from "../Track/Track";
 import styles from "./Tracklist.module.css";
 
-function Tracklist ({ tracks, onAdd }) {
+function Tracklist ({ tracks, onAdd, onRemove }) {
     return (
         <div className={styles.tracklist}>
             {tracks.map((track) => {
@@ -10,6 +10,7 @@ function Tracklist ({ tracks, onAdd }) {
                         key={track.id}
                         track={track}
                         onAdd={onAdd}
+                        onRemove={onRemove}
                     />
                 )
             })}

@@ -1,9 +1,13 @@
 import styles from "./Track.module.css";
 
-function Track({ track, onAdd }) {
+function Track({ track, onAdd, onRemove }) {
 
     function handleAddToPlaylist() {
         onAdd(track);
+    }
+
+    function handleRemoveFromPlaylist() {
+        onRemove(track);
     }
 
     return (
@@ -12,6 +16,7 @@ function Track({ track, onAdd }) {
             <p>{track.artist}</p>
             <p>{track.album}</p>
             <button onClick={handleAddToPlaylist}>Add to Playlist</button>
+            <button onClick={handleRemoveFromPlaylist}>-</button>
         </div>
     );
 }
