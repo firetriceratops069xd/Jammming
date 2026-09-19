@@ -1,14 +1,15 @@
 import Tracklist from "../Tracklist/Tracklist";
 import styles from "./Playlist.module.css";
 
-function Playlist({ name, tracks, onRemove, onChange }) {
-    function handleSave(event) {
-        event.preventDefault();
-        console.log("Playlist saved!")
-    }
+function Playlist({ name, tracks, onRemove, onChange, onSave }) {
 
     return (
-        <form className={styles.playlist} onSubmit={handleSave}>
+        <form className={styles.playlist}     
+            onSubmit={(event) => {
+                event.preventDefault();
+                onSave();
+            }}
+        >
 
             <label htmlFor="playlist-name">Playlist name</label>
             <input 
@@ -25,7 +26,7 @@ function Playlist({ name, tracks, onRemove, onChange }) {
                 onRemove={onRemove} 
             />
             
-            <button className={styles.button}>Save to Spotify</button>
+            <button type="submit" className={styles.button}>Save to Spotify</button>
         </form>
     )    
 }

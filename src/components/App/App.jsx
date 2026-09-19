@@ -7,17 +7,19 @@ function App() {
   const [playlistName, setPlaylistName] = useState("My Awesome Playlist");
   
   const [playlistTracks, setPlaylistTracks] = useState([
-      {
-      name: "Bohemian Rhapsody",
-      artist: "Queen",
-      album: "A Night at the Opera",
-      id: 1
+    {
+        name: "Bohemian Rhapsody",
+        artist: "Queen",
+        album: "A Night at the Opera",
+        id: 1,
+        uri: "spotify:track:bohemian-rhapsody"
     },
     {
-      name: "Numb",
-      artist: "Linkin Park",
-      album: "Meteora",
-      id: 2
+        name: "Numb",
+        artist: "Linkin Park",
+        album: "Meteora",
+        id: 2,
+        uri: "spotify:track:numb"
     }
   ]);
 
@@ -36,24 +38,34 @@ function App() {
     }
   }
 
+  function savePlaylist() {
+    console.log("savePlaylist was called!");
+    const trackUris = playlistTracks.map(track => track.uri)
+    console.log(trackUris);
+    setPlaylistTracks([]);
+  }
+
   const searchResults = [
       {
           name: "Bohemian Rhapsody",
           artist: "Queen",
           album: "A Night at the Opera",
-          id: 1
+          id: 1,
+          uri: "spotify:track:bohemian-rhapsody"
       },
       {
           name: "Numb",
           artist: "Linkin Park",
           album: "Meteora",
-          id: 2
+          id: 2,
+          uri: "spotify:track:numb"
       },
       {
           name: "Blinding Lights",
           artist: "The Weeknd",
           album: "After Hours",
-          id: 3
+          id: 3,
+          uri: "spotify:track:blinding-lights"
       }
   ];
 
@@ -68,7 +80,8 @@ function App() {
         name={playlistName}
         tracks={playlistTracks}
         onRemove={removeFromPlaylist}
-        onChange={setPlaylistName}  
+        onChange={setPlaylistName}
+        onSave={savePlaylist}  
       />
     </div>
   );
